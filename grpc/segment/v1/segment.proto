@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package segment;
+
+import "shared.proto";
+
+option go_package = "arman-estimation-service/grpc/segment/v1";
+
+service Segment {
+  rpc Push(PushSegmentRequest) returns (PushSegmentResponse);
+}
+
+// PushSegmentRequest Push rpc request
+message PushSegmentRequest {
+  uint32 user_id = 1;
+  string segment = 2;
+}
+
+// PushSegmentResponse Push rpc response
+message PushSegmentResponse {
+  shared.Status response = 1;
+}

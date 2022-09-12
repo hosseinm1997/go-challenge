@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package estimation;
+
+import "shared.proto";
+
+option go_package = "arman-estimation-service/grpc/estimation/v1";
+
+service Estimation {
+  rpc Count(EstimationRequest) returns (EstimationResponse);
+}
+
+// CountSegmentRequest count rpc request
+message EstimationRequest {
+  string segment = 1;
+}
+
+// CountSegmentResponse count rpc response
+message EstimationResponse {
+  shared.Status response = 1;
+  uint64 count = 2;
+}
