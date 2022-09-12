@@ -29,6 +29,7 @@ func InitializeGRPCServer(config aliases.StringMap) {
 		panic("invalid grpc server config!")
 	}
 
+	// Register all RPC servers on main gRPC server
 	serve(grpcServer)
 	err = grpcServer.Serve(lis)
 	if err != nil {
@@ -36,6 +37,7 @@ func InitializeGRPCServer(config aliases.StringMap) {
 	}
 }
 
+//getAddress get host and port from env variables.
 func getAddress() string {
 	return fmt.Sprintf("%s:%d", viper.GetString("GRPC_HOST"), viper.GetInt("GRPC_PORT"))
 }

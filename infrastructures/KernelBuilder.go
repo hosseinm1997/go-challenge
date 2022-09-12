@@ -5,6 +5,9 @@ import (
 	"sync"
 )
 
+//KernelBuilder builds kernel components one by one in a correct order. It knows when to build each component.
+// It uses "Buildr Pattern"
+
 type IKernelBuilder interface {
 	Build(config aliases.StringMap) IKernel
 }

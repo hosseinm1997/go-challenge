@@ -1,5 +1,7 @@
 package infrastructures
 
+//Kernel is the starting point of this microservice. It runs each component starting point.
+
 import (
 	"arman-estimation-service/infrastructures/components"
 	"arman-estimation-service/types/aliases"
@@ -17,9 +19,7 @@ type kernel struct{}
 func (k *kernel) loadEnvVars() {
 	if err := components.InitEnvLoader().LoadFromFile(".env"); err != nil {
 		println(err)
-		// todo: implement error handling
 	}
-
 }
 
 func (k *kernel) initServiceContainer(config aliases.StringMap) {

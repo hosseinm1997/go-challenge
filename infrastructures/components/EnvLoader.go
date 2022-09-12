@@ -1,5 +1,8 @@
 package components
 
+// This component used to load all env variables from .env file
+// In the future it will use real environment variables set by server
+
 import (
 	"github.com/spf13/viper"
 	"sync"

@@ -1,5 +1,7 @@
 package components
 
+//InitializeRedisServer initialize redis client connection to redis server only once. (shared with requests)
+//It prevents system from opening and closing connection too many times.
 import (
 	"arman-estimation-service/types/aliases"
 	"github.com/go-redis/redis/v9"

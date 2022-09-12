@@ -1,5 +1,7 @@
 package utils
 
+// A place for REAL useful helper functions.
+
 import (
 	"arman-estimation-service/types/structs"
 	"fmt"
